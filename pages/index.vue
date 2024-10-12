@@ -1,67 +1,11 @@
 <template>
   <div>
-    <!-- Preloader -->
-    <!-- <div id="preloader-active">
-      <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-          <div class="preloader-circle"></div>
-          <div class="preloader-img pere-text">
-            <img src="@/assets/img/logo/loder.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Header -->
-    <header>
-      <div class="header-area">
-        <div class="main-header header-sticky">
-          <div class="container-fluid">
-            <div class="row align-items-center">
-              <div class="col-xl-2 col-lg-2 col-md-1">
-                <div class="logo">
-                  <a href="index.html"><img src="@/assets/img/logo/logo.png" alt="" /></a>
-                </div>
-              </div>
-              <div class="col-xl-10 col-lg-10 col-md-10">
-                <div class="menu-main d-flex align-items-center justify-content-end">
-                  <div class="main-menu f-right d-none d-lg-block">
-                    <nav>
-                      <ul id="navigation">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="spakers.html">Speakers</a></li>
-                        <li><a href="schedule.html">Schedule</a></li>
-                        <li>
-                          <a href="blog.html">Blog</a>
-                          <ul class="submenu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog_details.html">Blog Details</a></li>
-                            <li><a href="elements.html">Element</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-                  <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                    <a href="#" class="btn header-btn">Get Your Ticket</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="mobile_menu d-block d-lg-none"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
+   
+    <Nav />
     <!-- Main Content -->
     <main>
       <!-- Slider Area -->
-      <div class="slider-area position-relative">
+      <!-- <div class="slider-area position-relative">
         <div class="slider-active">
           <div class="single-slider slider-height d-flex align-items-center">
             <div class="container">
@@ -83,7 +27,6 @@
           </div>
         </div>
 
-        <!-- Countdown Section -->
         <div class="counter-section d-none d-sm-block">
           <div class="cd-timer" id="countdown">
             <div class="cd-item">
@@ -104,10 +47,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- About Section -->
-      <section class="about-low-area section-padding2">
+      <!-- <section class="about-low-area section-padding2">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-md-12">
@@ -158,7 +101,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
     </main>
   </div>
 </template>
