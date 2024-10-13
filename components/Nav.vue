@@ -4,7 +4,6 @@
         <div class="main-header header-sticky">
           <div class="container-fluid">
             <div class="row align-items-center">
-              <!-- Logo Section -->
               <div class="col-xl-2 col-lg-2 col-md-1">
                 <div class="logo">
                   <a href="index.html">
@@ -12,7 +11,6 @@
                   </a>
                 </div>
               </div>
-              <!-- Navigation Menu -->
               <div class="col-xl-8 col-lg-8 col-md-10">
                 <div class="menu-main d-flex align-items-center justify-content-center">
                   <nav class="main-menu d-none d-lg-block">
@@ -21,19 +19,23 @@
                       <li><a href="about.html">About</a></li>
                       <li><a href="speakers.html">Speakers</a></li>
                       <li><a href="schedule.html">Schedule</a></li>
-                      <li><a href="blog.html">Blog</a></li>
+                      <li><a href="blog.html">Blog</a>
+                          <ul class="submenu">
+                              <li><a href="blog.html">Blog</a></li>
+                              <li><a href="blog_details.html">Blog Details</a></li>
+                              <li><a href="elements.html">Element</a></li>
+                          </ul>
+                      </li>
                       <li><a href="contact.html">Contact</a></li>
                     </ul>
                   </nav>
                 </div>
               </div>
-              <!-- Button Section -->
               <div class="col-xl-2 col-lg-2 col-md-1">
                 <div class="header-right-btn d-flex justify-content-end">
                   <a href="#" class="btn header-btn">Get Your Ticket</a>
                 </div>
               </div>
-              <!-- Mobile Menu -->
               <div class="col-12">
                 <div class="mobile_menu d-block d-lg-none"></div>
               </div>
@@ -45,7 +47,6 @@
   </template>
   
   <script setup>
-  // No JavaScript needed for static header
   </script>
 
   <style>
@@ -67,7 +68,7 @@
     text-transform: uppercase;
     cursor: pointer;
     &:hover {
-      color: #fff !important;
+      color: #fff;
     }
     &:focus {
       outline: none;
@@ -105,6 +106,32 @@
             }
           }
         }
+        & ul.submenu{
+            position: absolute;
+            width: 170px;
+            background: rgba(255, 255, 255, 0.9);
+            left: 0;
+            top: 80%;
+            visibility: hidden;
+            opacity: 0;
+            box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
+            padding: 17px 0;
+            // border-top: 5px solid #331391;
+            & > li{
+                margin-left: 7px;
+                display: block;
+                & > a{
+                    padding: 6px 10px;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    margin: 0;
+                    &:hover{
+                        color: #331391;
+                        background: none;
+                    }
+                }
+            } 
+        }
       }
     }
   }
@@ -134,7 +161,17 @@
   
   /* Header Sticky */
   .header-sticky.sticky-bar.sticky .main-menu ul li a {
-    padding: 20px 20px !important;
+    padding: 20px 20px;
+  }
+
+  //! SubMenu Hover
+  .header-area .main-menu ul ul.submenu > li > a:hover {
+    padding-left: 13px;
+  }
+  .header-area .main-menu ul > li:hover > ul.submenu {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
   }
   
   /* Mobile Menu */
