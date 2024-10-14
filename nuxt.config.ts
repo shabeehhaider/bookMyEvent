@@ -3,9 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: [
-    'bootstrap/dist/css/bootstrap.css'
+    '@splidejs/splide/dist/css/splide.min.css',
+    'bootstrap/dist/css/bootstrap.css',
   ],
   plugins: [
+    { src: '~/plugins/splide.client.js', mode: 'client' },
     { src: '~/plugins/bootstrap.ts', mode: 'client' }
-  ]
+  ],
+  build: {
+    transpile: ['@splidejs/vue-splide'],
+  },
 })
