@@ -15,18 +15,19 @@
                 <div class="menu-main d-flex align-items-center justify-content-center">
                   <nav class="main-menu d-none d-lg-block">
                     <ul id="navigation">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="speakers.html">Speakers</a></li>
-                      <li><a href="schedule.html">Schedule</a></li>
-                      <li><a href="blog.html">Blog</a>
-                          <ul class="submenu">
-                              <li><a href="blog.html">Blog</a></li>
-                              <li><a href="blog_details.html">Blog Details</a></li>
-                              <li><a href="elements.html">Element</a></li>
-                          </ul>
+                      <li><nuxt-link to="/">Home</nuxt-link></li>
+                      <li><nuxt-link to="/about">About</nuxt-link></li>
+                      <li><nuxt-link to="/speakers">Events</nuxt-link></li>
+                      <li><nuxt-link to="/schedule">Gallery</nuxt-link></li>
+                      <li>
+                        <nuxt-link to="/blog">Policy</nuxt-link>
+                        <ul class="submenu">
+                          <li><nuxt-link to="/blog">Privacy Policy</nuxt-link></li>
+                          <li><nuxt-link to="/blog_details">Refund Policy</nuxt-link></li>
+                          <li><nuxt-link to="/elements">Terms and Conditions</nuxt-link></li>
+                        </ul>
                       </li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><nuxt-link to="/contact">Contact</nuxt-link></li>
                     </ul>
                   </nav>
                 </div>
