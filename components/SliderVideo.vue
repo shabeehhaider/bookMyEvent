@@ -42,7 +42,7 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
 const splideOptions = ref({
   type: 'loop',
   perPage: 1,
-  autoplay: false,
+  autoplay: true,
   pauseOnHover: false,
   interval: 3000,
   arrows: false, // Disable arrows
@@ -117,19 +117,7 @@ onMounted(() => {
 
 <style lang="scss">
 .slider-height {
-  height: 900px;
-  @media (max-width: 1200px) {
-    height: 700px;
-  }
-  @media (max-width: 992px) {
-    height: 650px;
-  }
-  @media (max-width: 768px) {
-    height: 600px;
-  }
-  @media (max-width: 576px) {
-    height: 500px;
-  }
+  height: 700px;
 }
 
 .slider-area {

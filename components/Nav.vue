@@ -1,60 +1,88 @@
 <template>
-    <header>
-      <div class="header-area">
-        <div class="main-header header-sticky">
-          <div class="container-fluid">
-            <div class="row align-items-center">
-              <div class="col-xl-2 col-lg-2 col-md-1">
-                <div class="logo">
-                  <a href="index.html">
-                    <img src="@/assets/img/logo/logo.png" alt="Evento Logo" />
-                  </a>
-                </div>
+  <header ref="header">
+    <div class="header-area">
+      <div class="main-header" :class="{ 'header-sticky': isSticky }">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-xl-2 col-lg-2 col-md-1">
+              <div class="logo">
+                <a href="index.html">
+                  <img src="@/assets/img/logo/logo.png" alt="Evento Logo" />
+                </a>
               </div>
-              <div class="col-xl-8 col-lg-8 col-md-10">
-                <div class="menu-main d-flex align-items-center justify-content-center">
-                  <nav class="main-menu d-none d-lg-block">
-                    <ul id="navigation">
-                      <li><nuxt-link to="/">Home</nuxt-link></li>
-                      <li><nuxt-link to="/about">About</nuxt-link></li>
-                      <li><nuxt-link to="/speakers">Events</nuxt-link></li>
-                      <li><nuxt-link to="/schedule">Gallery</nuxt-link></li>
-                      <li>
-                        <nuxt-link to="/blog">Policy</nuxt-link>
-                        <ul class="submenu">
-                          <li><nuxt-link to="/blog">Privacy Policy</nuxt-link></li>
-                          <li><nuxt-link to="/blog_details">Refund Policy</nuxt-link></li>
-                          <li><nuxt-link to="/elements">Terms and Conditions</nuxt-link></li>
-                        </ul>
-                      </li>
-                      <li><nuxt-link to="/contact">Contact</nuxt-link></li>
-                    </ul>
-                  </nav>
-                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-10">
+              <div class="menu-main d-flex align-items-center">
+                <nav class="main-menu d-none d-lg-block">
+                  <ul id="navigation">
+                    <li><nuxt-link to="/">Home</nuxt-link></li>
+                    <li><nuxt-link to="/about">About</nuxt-link></li>
+                    <li><nuxt-link to="/speakers">Events</nuxt-link></li>
+                    <li><nuxt-link to="/schedule">Gallery</nuxt-link></li>
+                    <li>
+                      <nuxt-link to="/blog">Policy</nuxt-link>
+                      <ul class="submenu">
+                        <li><nuxt-link to="/blog">Privacy Policy</nuxt-link></li>
+                        <li><nuxt-link to="/blog_details">Refund Policy</nuxt-link></li>
+                        <li><nuxt-link to="/elements">Terms and Conditions</nuxt-link></li>
+                      </ul>
+                    </li>
+                    <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+                  </ul>
+                </nav>
               </div>
-              <div class="col-xl-2 col-lg-2 col-md-1">
-                <div class="header-right-btn d-flex justify-content-end">
-                  <a href="#" class="btn header-btn">Get Your Ticket</a>
-                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-1">
+              <div class="header-right-btn d-flex justify-content-end">
+                <a href="#" class="btn header-btn">Get Your Ticket</a>
               </div>
-              <div class="col-12">
-                <div class="mobile_menu d-block d-lg-none"></div>
-              </div>
+            </div>
+            <div class="col-12">
+              <div class="mobile_menu d-block d-lg-none"></div>
             </div>
           </div>
         </div>
       </div>
-    </header>
-  </template>
+    </div>
+  </header>
+</template>
+
   
-  <script setup>
-  </script>
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const isSticky = ref(false);
+
+const handleScroll = () => {
+  isSticky.value = window.scrollY > 500;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+</script>
+
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
   </style>
   
   <style lang="scss">
+
+  .header-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
 
   .boxed-btn {
     background: #fff;
@@ -82,7 +110,7 @@
   /* Header Area */
   .header-area {
     .main-header {
-      padding: 20px 130px;
+      padding: 20px 10px;
       .main-menu {
         ul {
             margin: 0;
