@@ -38,7 +38,7 @@
           </div>
 
           <!-- Button -->
-          <a href="#" class="btn header-right-btn">Get Your Ticket</a>
+          <a class="btn header-right-btn" @click.prevent="openModal">Get Your Ticket</a>
         </div>
 
         <!-- Right Image -->
@@ -51,10 +51,23 @@
         </div>
       </div>
     </div>
+    <!-- Modal Component -->
+    <TicketModal :isOpen="isModalOpen" @close="closeModal" />
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const isModalOpen = ref(false);
+
+const openModal = () => {
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
 </script>
 <style lang="scss" scoped>
 .section-padding2 {
