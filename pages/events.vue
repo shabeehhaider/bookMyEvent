@@ -2,7 +2,7 @@
   <div>
     <Nav />
     <main>
-      <AboutLowArea />
+      <EventList />
     </main>
   </div>
 </template>

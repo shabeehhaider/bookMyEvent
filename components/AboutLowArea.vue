@@ -2,7 +2,6 @@
   <section class="about-low-area section-padding2">
     <div class="container">
       <div class="row align-items-center">
-        <!-- Left Content -->
         <div class="col-lg-6 col-md-12">
           <div class="about-caption mb-50">
             <div class="section-tittle mb-35">
@@ -16,8 +15,6 @@
               Prepare for a night full of music, drinks, and excitement under the stars! Don't miss out—this is the yacht party of the season!
             </p>
           </div>
-
-          <!-- Info Section -->
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
               <div class="single-caption mb-20">
@@ -36,12 +33,8 @@
               </div>
             </div>
           </div>
-
-          <!-- Button -->
-          <a class="btn header-right-btn" @click.prevent="openModal">Get Your Ticket</a>
+          <nuxt-link to="/events" class="btn header-right-btn">Get Your Ticket</nuxt-link>
         </div>
-
-        <!-- Right Image -->
         <div class="col-lg-6 col-md-12">
           <div class="about-img-wrapper">
             <div class="about-img">
@@ -51,23 +44,12 @@
         </div>
       </div>
     </div>
-    <!-- Modal Component -->
-    <TicketModal :isOpen="isModalOpen" @close="closeModal" />
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-const isModalOpen = ref(false);
-
-const openModal = () => {
-  isModalOpen.value = true;
-};
-
-const closeModal = () => {
-  isModalOpen.value = false;
-};
 </script>
 <style lang="scss" scoped>
 .section-padding2 {

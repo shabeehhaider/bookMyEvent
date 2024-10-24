@@ -6,9 +6,9 @@
           <div class="row align-items-center">
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div class="logo">
-                <a href="index.html">
+                <nuxt-link to="/">
                   <img src="@/assets/img/logo/logo.png" alt="Evento Logo" />
-                </a>
+                </nuxt-link>
               </div>
             </div>
             <div class="col-xl-8 col-lg-8 col-md-10">
@@ -17,14 +17,14 @@
                   <ul id="navigation">
                     <li><nuxt-link to="/">Home</nuxt-link></li>
                     <li><nuxt-link to="/about">About</nuxt-link></li>
-                    <li><nuxt-link to="/speakers">Events</nuxt-link></li>
-                    <li><nuxt-link to="/schedule">Gallery</nuxt-link></li>
+                    <li><nuxt-link to="/events">Events</nuxt-link></li>
+                    <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
                     <li>
-                      <nuxt-link to="/blog">Policy</nuxt-link>
+                      <nuxt-link to="/privacyPolicy">Policy</nuxt-link>
                       <ul class="submenu">
-                        <li><nuxt-link to="/blog">Privacy Policy</nuxt-link></li>
-                        <li><nuxt-link to="/blog_details">Refund Policy</nuxt-link></li>
-                        <li><nuxt-link to="/elements">Terms and Conditions</nuxt-link></li>
+                        <li><nuxt-link to="/privacyPolicy">Privacy Policy</nuxt-link></li>
+                        <li><nuxt-link to="/refundPolicy">Refund Policy</nuxt-link></li>
+                        <li><nuxt-link to="/termsAndConditions">Terms and Conditions</nuxt-link></li>
                       </ul>
                     </li>
                     <li><nuxt-link to="/contact">Contact</nuxt-link></li>
@@ -34,7 +34,7 @@
             </div>
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div class="header-right-btn d-flex justify-content-end">
-                <a href="#" class="btn header-btn">Get Your Ticket</a>
+                <nuxt-link to="/events" class="btn header-btn">Get Your Ticket</nuxt-link>
               </div>
             </div>
             <div class="col-12">
@@ -137,7 +137,7 @@ onUnmounted(() => {
         }
         & ul.submenu{
             position: absolute;
-            width: 170px;
+            width: 220px;
             background: rgba(255, 255, 255, 0.9);
             left: 0;
             top: 80%;
@@ -145,6 +145,8 @@ onUnmounted(() => {
             opacity: 0;
             box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
             padding: 17px 0;
+            border-radius: 20px;
+            
             // border-top: 5px solid #331391;
             & > li{
                 margin-left: 7px;
@@ -193,10 +195,7 @@ onUnmounted(() => {
     padding: 20px 20px;
   }
 
-  //! SubMenu Hover
-  .header-area .main-menu ul ul.submenu > li > a:hover {
-    padding-left: 13px;
-  }
+  
   .header-area .main-menu ul > li:hover > ul.submenu {
     visibility: visible;
     opacity: 1;
