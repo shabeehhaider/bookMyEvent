@@ -114,6 +114,10 @@ import { ref } from 'vue';
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
   }
 
   .about-img {

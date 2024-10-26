@@ -10,7 +10,7 @@
           </div>
         </SplideSlide>
       </Splide>
-      <div class="counter-section d-none d-sm-block">
+      <div class="counter-section d-block">
         <div class="cd-timer" id="countdown">
             <div class="cd-item">
             <span id="days">96</span>
@@ -42,7 +42,7 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
 const splideOptions = ref({
   type: 'loop',
   perPage: 1,
-  autoplay: true,
+  autoplay: false,
   pauseOnHover: false,
   interval: 3000,
   arrows: false, // Disable arrows
@@ -148,6 +148,10 @@ onMounted(() => {
       padding-left: 100px;
       letter-spacing: 0.05em;
 
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+
       &::before {
         position: absolute;
         content: '';
@@ -167,6 +171,10 @@ onMounted(() => {
       line-height: 1.2;
       margin-bottom: 57px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for visibility */
+
+      @media (max-width: 767px) {
+        font-size: 24px;
+      }
     }
 
     p {
@@ -228,24 +236,8 @@ a{
     background-color: rgba(0, 0, 0, 0.4); /* Dark overlay behind text */
     border-radius: 10px;
 
-    @media (max-width: 1200px) {
-        right: 80px;
-        bottom: 80px;
-    }
-
-    @media (max-width: 992px) {
-        right: 30px;
-        bottom: 30px;
-    }
-
-    @media (max-width: 768px) {
-        right: 30px;
-        bottom: 30px;
-    }
-
-    @media (max-width: 576px) {
-        right: 30px;
-        bottom: 30px;
+    @media (max-width: 767px) {
+      right: 20px;
     }
 
     .cd-timer {
