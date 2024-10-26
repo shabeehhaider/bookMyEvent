@@ -123,5 +123,37 @@
   router-link:hover {
     text-decoration: underline;
   }
+  // Responsive styles for tablets and mobile screens
+  @media (max-width: 768px) {
+    padding: 60px 40px;
+
+    h1 {
+      font-size: 22px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 20px;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
 }
 </style>
