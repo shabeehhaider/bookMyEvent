@@ -20,7 +20,7 @@
                     <li><nuxt-link to="/events">Events</nuxt-link></li>
                     <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
                     <li>
-                      <nuxt-link to="/privacyPolicy">Policy</nuxt-link>
+                      <nuxt-link>Policy</nuxt-link>
                       <ul class="submenu">
                         <li><nuxt-link to="/privacyPolicy">Privacy Policy</nuxt-link></li>
                         <li><nuxt-link to="/refundPolicy">Refund Policy</nuxt-link></li>
@@ -54,7 +54,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const isSticky = ref(false);
 
 const handleScroll = () => {
-  isSticky.value = window.scrollY > 500;
+  isSticky.value = window.scrollY > 104;
 };
 
 onMounted(() => {

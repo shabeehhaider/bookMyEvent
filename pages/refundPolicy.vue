@@ -2,6 +2,7 @@
   <div>
     <Nav />
     <main>
+      <Refund />
     </main>
   </div>
 </template>

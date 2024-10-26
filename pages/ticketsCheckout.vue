@@ -2,7 +2,6 @@
   <div>
     <Nav />
     <main>
-      <Privacy />
     </main>
   </div>
 </template>

@@ -2,6 +2,7 @@
   <div>
     <Nav />
     <main>
+      <TermsAndConditions />
     </main>
   </div>
 </template>

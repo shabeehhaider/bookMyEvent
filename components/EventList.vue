@@ -2,83 +2,15 @@
   <section class="event-section">
     <div class="container">
       <div class="row">
-        <!-- Event Card 1 -->
-        <div class="col-lg-4 col-md-6 d-flex">
+        <div v-for="(event, index) in eventsData" :key="index" class="col-lg-4 col-md-6 d-flex">
           <div class="event-card">
-            <h2>Yacht Party</h2>
-            <p>
-              Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. 
-              Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!
-            </p>
+            <h2>{{ event.title }}</h2>
+            <p>{{ event.description }}</p>
             <ul class="event-info">
-              <li><strong>Date:</strong> November 2 2024</li>
-              <li><strong>Location:</strong> Dubai, United Arab Emirates</li>
+              <li><strong>Date:</strong> {{ event.date }}</li>
+              <li><strong>Location:</strong> {{ event.location }}</li>
             </ul>
-            <a href="#" class="btn">Get Tickets</a>
-          </div>
-        </div>
-
-        <!-- Event Card 2 -->
-        <div class="col-lg-4 col-md-6 d-flex">
-          <div class="event-card">
-            <h2>Yacht Party</h2>
-            <p>
-              Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. 
-              Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!
-            </p>
-            <ul class="event-info">
-              <li><strong>Date:</strong> November 9 2024</li>
-              <li><strong>Location:</strong> Dubai, United Arab Emirates</li>
-            </ul>
-            <a href="#" class="btn">Get Tickets</a>
-          </div>
-        </div>
-
-        <!-- Event Card 3 -->
-        <div class="col-lg-4 col-md-6 d-flex">
-          <div class="event-card">
-            <h2>Yacht Party</h2>
-            <p>
-              Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. 
-              Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!
-            </p>
-            <ul class="event-info">
-              <li><strong>Date:</strong> December 31 2024</li>
-              <li><strong>Location:</strong> Sydney, Australia</li>
-            </ul>
-            <a href="#" class="btn">Get Tickets</a>
-          </div>
-        </div>
-
-        <!-- Event Card 4 -->
-        <div class="col-lg-4 col-md-6 d-flex">
-          <div class="event-card">
-            <h2>Yacht Party</h2>
-            <p>
-              Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. 
-              Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!
-            </p>
-            <ul class="event-info">
-              <li><strong>Date:</strong> June 10 2025</li>
-              <li><strong>Location:</strong> Ibiza, Spain</li>
-            </ul>
-            <a href="#" class="btn">Get Tickets</a>
-          </div>
-        </div>
-
-        <!-- Event Card 5 -->
-        <div class="col-lg-4 col-md-6 d-flex">
-          <div class="event-card">
-            <h2>Yacht Party</h2>
-            <p>
-              Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. 
-              Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!
-            </p>
-            <ul class="event-info">
-              <li><strong>Date:</strong> August 14 2025</li>
-              <li><strong>Location:</strong> Banff, Canada</li>
-            </ul>
-            <a href="#" class="btn">Get Tickets</a>
+            <nuxt-link :to="event.link" class="btn">Get Tickets </nuxt-link> 
           </div>
         </div>
       </div>
@@ -87,6 +19,11 @@
 </template>
 
 <script setup>
+import { eventsData } from './composables/eventsData';
+
+const events = eventsData;
+console.log(events,"events");
+
 </script>
 
 <style scoped>
