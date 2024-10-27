@@ -33,7 +33,7 @@
               </div>
             </div>
           </div>
-          <nuxt-link to="/events" class="btn header-right-btn">Get Your Ticket</nuxt-link>
+          <!-- <nuxt-link to="/events" class="btn header-right-btn">Get Your Ticket</nuxt-link> -->
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="about-img-wrapper">

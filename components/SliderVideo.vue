@@ -10,26 +10,6 @@
           </div>
         </SplideSlide>
       </Splide>
-      <div class="counter-section d-block">
-        <div class="cd-timer" id="countdown">
-            <div class="cd-item">
-            <span id="days">96</span>
-            <p>Days</p>
-            </div>
-            <div class="cd-item">
-            <span id="hours">15</span>
-            <p>Hrs</p>
-            </div>
-            <div class="cd-item">
-            <span id="minutes">07</span>
-            <p>Min</p>
-            </div>
-            <div class="cd-item">
-            <span id="seconds">02</span>
-            <p>Sec</p>
-            </div>
-        </div>
-      </div>
     </div>
     
 </template>
@@ -64,58 +44,9 @@ const slides = ref([
   },
 ]);
 
-// Function to start the countdown timer
-function startCountdown(eventDate) {
-    const countdownElement = document.getElementById("countdown");
-
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-
-      // Time calculations for days, hours, minutes, and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Add leading zero to hours, minutes, and seconds if they are less than 10
-      const formattedDays = days < 10 ? '0' + days : days;
-      const formattedHours = hours < 10 ? '0' + hours : hours;
-      const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-      const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-
-      // Display the result in the respective elements
-      document.getElementById("days").innerHTML = formattedDays;
-      document.getElementById("hours").innerHTML = formattedHours;
-      document.getElementById("minutes").innerHTML = formattedMinutes;
-      document.getElementById("seconds").innerHTML = formattedSeconds;
-
-      // If the countdown is finished, stop the countdown
-      if (distance < 0) {
-        clearInterval(interval);
-        countdownElement.innerHTML = "Event Started!";
-      }
-    };
-
-    // Update the countdown every second
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Run once to prevent delay
-}
-
-
-
-onMounted(() => {
-  // Set the date of the next event (Saturday at 11:30 PM)
-  const nextEventDate = new Date();
-  nextEventDate.setDate(nextEventDate.getDate() + (6 - nextEventDate.getDay() + 7) % 7); // Set to next Saturday
-  nextEventDate.setHours(23, 30, 0, 0); // Set time to 11:30 PM
-
-  // Start the countdown after DOM is mounted
-  startCountdown(nextEventDate.getTime());
-});
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .slider-height {
   height: 700px;
 }

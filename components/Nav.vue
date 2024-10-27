@@ -34,7 +34,8 @@
             </div>
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div class="header-right-btn d-none d-lg-flex justify-content-end">
-                <nuxt-link to="/events" class="btn header-btn">Get Your Ticket</nuxt-link>
+                <!-- <nuxt-link to="/events" class="btn header-btn">Get Your Ticket</nuxt-link> -->
+                <nuxt-link to="#" @click.prevent="scrollToEventsList" class="btn header-btn">Get Your Ticket</nuxt-link>
               </div>
               <!-- Mobile menu toggle button -->
               <div class="mobile_menu_toggle d-flex d-lg-none justify-content-end" @click="toggleMobileMenu">
@@ -68,6 +69,19 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 const isSticky = ref(false);
 const isMobileMenuOpen = ref(false);
+
+const scrollToEventsList = () => {
+  const eventsListElement = document.getElementById('events-list');
+  const navHeight = document.querySelector('.main-header').offsetHeight; // Get the height of the navigation bar
+
+  if (eventsListElement) {
+    const targetPosition = eventsListElement.getBoundingClientRect().top + window.scrollY - navHeight; // Calculate the target position
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    });
+  }
+};
 
 // Function to handle sticky header on scroll
 const handleScroll = () => {

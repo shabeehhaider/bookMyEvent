@@ -4,6 +4,7 @@
     <main>
       <SliderVideo />
       <AboutLowArea />
+      <EventList />
     </main>
   </div>
 </template>
