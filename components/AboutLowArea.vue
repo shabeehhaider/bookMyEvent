@@ -9,31 +9,12 @@
             </div>
             <p>
               Get Ready for the Ultimate Yacht Party!
-              Join us this Saturday at 11:30 PM for an unforgettable night aboard a luxurious yacht. Dance the night away with electrifying beats from our top-tier DJs, who'll be spinning the best tracks to keep the energy high all night long. Expect an incredible vibe, amazing people, and everything you need for the perfect party on the water.  
+              Join us for an unforgettable night aboard a luxurious yacht. Dance the night away with electrifying beats from our top-tier DJs, who'll be spinning the best tracks to keep the energy high all night long. Expect an incredible vibe, amazing people, and everything you need for the perfect party on the water.  
             </p>
             <p>
               Prepare for a night full of music, drinks, and excitement under the stars! Don't miss out—this is the yacht party of the season!
             </p>
           </div>
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="single-caption mb-20">
-                 <div class="caption">
-                  <h5>Where</h5>
-                  <p>Dubai, United Arab Emirates</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="single-caption mb-20">
-                <div class="caption">
-                  <h5>When</h5>
-                  <p>Oct 26, 2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <nuxt-link to="/events" class="btn header-right-btn">Get Your Ticket</nuxt-link> -->
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="about-img-wrapper">
@@ -122,11 +103,11 @@ import { ref } from 'vue';
 
   .about-img {
     width: 100%;
-    max-width: 450px; /* Control the image width */
+    max-width: 360px; /* Control the image width */
     img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 20px;
     }
   }
 }

@@ -2,16 +2,19 @@
   <section class="event-section" id="events-list">
     <div class="container">
       <div class="row">
-        <div v-for="(event, index) in events" :key="index" class="col-lg-4 col-md-6 d-flex">
+        <div v-for="(event, index) in events" :key="index" class="col-lg-3 col-md-4 d-flex">
           <div class="event-card">
-            <h2>{{ event.title }}</h2>
-            <p>{{ event.description }}</p>
-            <ul class="event-info">
-              <li><strong>Date:</strong> {{ event.date }}</li>
-              <li><strong>Location:</strong> {{ event.location }}</li>
-            </ul>
+            <img src="@/assets/img/hero/event-2.png" alt="event Image" />
+            <div class="card-description">
+              <!-- <p>{{ event.description }}</p> -->
+              <ul class="event-info">
+                <li><strong>Date:</strong> {{ event.date }}</li>
+                <li><strong>Location:</strong> {{ event.location }}</li>
+              </ul>
+            </div>
+            
             <div class="counter-section d-block">
-              <div class="cd-timer" :id="'countdown-' + index"> <!-- Dynamic ID -->
+              <div class="cd-timer" :id="'countdown-' + index">
                   <div class="cd-item">
                     <span :id="'days-' + index">96</span>
                     <p>Days</p>
@@ -45,7 +48,6 @@ import { onMounted } from 'vue';
 
 const events = eventsData;
 
-// Function to start the countdown timer
 function startCountdown(eventDate, index) {
     const countdownElement = document.getElementById(`countdown-${index}`);
 
@@ -53,49 +55,41 @@ function startCountdown(eventDate, index) {
       const now = new Date().getTime();
       const distance = eventDate - now;
 
-      // Time calculations for days, hours, minutes, and seconds
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Add leading zero to days, hours, minutes, and seconds if they are less than 10
       const formattedDays = days < 10 ? '0' + days : days;
       const formattedHours = hours < 10 ? '0' + hours : hours;
       const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
       const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
 
-      // Display the result in the respective elements
       document.getElementById(`days-${index}`).innerHTML = formattedDays;
       document.getElementById(`hours-${index}`).innerHTML = formattedHours;
       document.getElementById(`minutes-${index}`).innerHTML = formattedMinutes;
       document.getElementById(`seconds-${index}`).innerHTML = formattedSeconds;
 
-      // If the countdown is finished, stop the countdown
       if (distance < 0) {
         clearInterval(interval);
         countdownElement.innerHTML = "Event Started!";
       }
     };
 
-    // Update the countdown every second
     const interval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Run once to prevent delay
+    updateCountdown(); 
 }
 
 onMounted(() => {
   events.forEach((event, index) => {
-    // Create a date object for the event date
-    const eventDate = new Date(event.date); // Ensure `event.date` is in a valid format
-    // Start the countdown for each event
+    const eventDate = new Date(event.date); 
     startCountdown(eventDate.getTime(), index);
   });
 });
 </script>
 
 
-
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .event-section {
   padding: 40px 0;
 }
@@ -113,7 +107,7 @@ onMounted(() => {
 
 .event-card {
   background-color: #f9f9f9;
-  padding: 30px;
+  padding-bottom: 30px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -121,6 +115,10 @@ onMounted(() => {
   flex-direction: column;
   justify-content: space-between; /* Ensures content is spread out inside the card */
   width: 100%;
+
+  .card-description{
+    padding: 30px 10px 0;
+  }
 }
 
 .event-card h2 {
@@ -139,7 +137,7 @@ onMounted(() => {
 .event-info {
   list-style: none;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .event-info li {
@@ -168,97 +166,98 @@ onMounted(() => {
   background-color: #250e68;
 }
 
-.counter-section {
-  display: flex;
-  justify-content: center; /* Center the countdown section */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-    // background-color: rgba(0, 0, 0, 0.4); /* Dark overlay behind text */
-    // border-radius: 10px;
+.event-card img{
+  border-radius: 10px 10px 0 0;
 }
 
-
+.counter-section {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #fff; /* Add background color to distinguish the section */
+  border-radius: 10px; /* Match the card's border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 20px; /* Add margin for spacing */
+}
 
 .cd-timer {
-    display: flex; /* Ensure items are aligned in a row */
-    justify-content: center; /* Center the timer items */
-    margin-top: 10px; /* Reduce margin */
-    margin-bottom: 10px; /* Reduce margin */
-    
-    .cd-item {
-        margin-right: 8px; /* Reduce space between items */
-        padding: 5px; /* Reduce padding */
-        height: 50px; /* Decrease height */
-        width: 60px; /* Decrease width */
-        position: relative;
-        display: inline-block;
-        text-align: center;
+  display: flex; /* Ensure items are aligned in a row */
+  justify-content: center; /* Center the timer items */
+  margin-top: 10px; /* Reduce margin */
+  margin-bottom: 10px; /* Reduce margin */
 
-        &:after {
-            position: absolute;
-            right: -5px; /* Adjust position */
-            top: 8px; /* Adjust position */
-            width: 6px; /* Decrease size */
-            height: 6px; /* Decrease size */
-            content: '';
-            border-radius: 50%;
-            background: #333;
-        }
+  .cd-item {
+    margin-right: 8px; /* Reduce space between items */
+    padding: 5px; /* Reduce padding */
+    height: 50px; /* Decrease height */
+    width: 60px; /* Decrease width */
+    position: relative;
+    display: inline-block;
+    text-align: center;
 
-        &::before {
-            position: absolute;
-            right: -5px; /* Adjust position */
-            bottom: 25px; /* Adjust position */
-            width: 6px; /* Decrease size */
-            height: 6px; /* Decrease size */
-            content: '';
-            border-radius: 50%;
-            background: #333;
-        }
-
-        &:last-child {
-            &::before {
-                position: unset;
-            }
-
-            &:after {
-                position: unset;
-            }
-        }
-
-        span {
-            font-size: 30px; /* Decrease font size */
-            color: #333;
-            font-weight: 400;
-            line-height: 20px; /* Adjust line height */
-            margin-bottom: 10px; /* Reduce margin */
-            display: inline-block;
-        }
-
-        p {
-            font-size: 12px; /* Decrease font size */
-            color: #333;
-            margin-bottom: 0;
-            line-height: 20px; /* Adjust line height */
-            text-transform: uppercase;
-        }
+    &:after {
+      position: absolute;
+      right: -5px; /* Adjust position */
+      top: 8px; /* Adjust position */
+      width: 6px; /* Decrease size */
+      height: 6px; /* Decrease size */
+      content: '';
+      border-radius: 50%;
+      background: #333;
     }
+
+    &::before {
+      position: absolute;
+      right: -5px; /* Adjust position */
+      bottom: 25px; /* Adjust position */
+      width: 6px; /* Decrease size */
+      height: 6px; /* Decrease size */
+      content: '';
+      border-radius: 50%;
+      background: #333;
+    }
+
+    &:last-child {
+      &::before {
+        position: unset;
+      }
+
+      &:after {
+        position: unset;
+      }
+    }
+
+    span {
+      font-size: 30px; /* Decrease font size */
+      color: #333;
+      font-weight: 400;
+      line-height: 20px; /* Adjust line height */
+      margin-bottom: 10px; /* Reduce margin */
+      display: inline-block;
+    }
+
+    p {
+      font-size: 12px; /* Decrease font size */
+      color: #333;
+      margin-bottom: 0;
+      line-height: 20px; /* Adjust line height */
+      text-transform: uppercase;
+    }
+  }
 }
 
 .counter-text {
-    span {
-        font-size: 14px; /* Adjust font size */
-        color: #ffffff;
-    }
+  span {
+    font-size: 14px; /* Adjust font size */
+    color: #ffffff;
+  }
 
-    h3 {
-        color: #ffffff;
-        font-weight: 700;
-        line-height: 28px; /* Adjust line height */
-        margin-top: 5px; /* Adjust margin */
-    }
+  h3 {
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 28px; /* Adjust line height */
+    margin-top: 5px; /* Adjust margin */
+  }
 }
-
 
 </style>
