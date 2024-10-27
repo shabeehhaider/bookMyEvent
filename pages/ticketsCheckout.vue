@@ -2,6 +2,7 @@
   <div>
     <Nav />
     <main>
+      <CheckoutForm />
     </main>
   </div>
 </template>

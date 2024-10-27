@@ -142,10 +142,9 @@ onUnmounted(() => {
           }
         }
       }
-      /* Desktop submenu style */
       ul.submenu {
         position: absolute;
-        width: 220px;
+        width: 260px;
         background: rgba(255, 255, 255, 0.9);
         visibility: hidden;
         opacity: 0;
@@ -157,6 +156,10 @@ onUnmounted(() => {
       li:hover > ul.submenu {
         visibility: visible;
         opacity: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 99;
       }
     }
   }
