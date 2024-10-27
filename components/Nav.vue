@@ -7,7 +7,7 @@
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div class="logo">
                 <nuxt-link to="/">
-                  <img src="@/assets/img/logo/logo.png" alt="Evento Logo" />
+                  <img src="../assets/img/logo/partyLogo.png" alt="Evento Logo" />
                 </nuxt-link>
               </div>
             </div>
@@ -234,6 +234,12 @@ onUnmounted(() => {
         }
       }
     }
+  }
+}
+
+.logo{
+  img{
+    width: 150px;
   }
 }
 </style>

@@ -13,4 +13,12 @@ export default defineNuxtConfig({
   build: {
     transpile: ['@splidejs/vue-splide'],
   },
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/svg+xml', sizes: '92x92', href: '/favicon.svg' }
+      ]
+    }
+  }
 })
