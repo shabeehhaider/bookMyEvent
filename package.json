@@ -10,14 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4",
-    "@splidejs/vue-splide": "^0.6.12",
-    "bootstrap": "^5.3.3",
-    "nuxt": "^3.13.0",
+    "@splidejs/splide": "4.1.4",
+    "@splidejs/vue-splide": "0.6.12",
+    "bootstrap": "5.3.3",
+    "nuxt": "3.13.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "sass-embedded": "^1.79.4"
+    "sass-embedded": "1.79.4"
   }
 }
