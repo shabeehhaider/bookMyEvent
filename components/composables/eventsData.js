@@ -6,6 +6,7 @@ export const eventsData  = [
     location: "Dubai, United Arab Emirates",
     link: "/ticketsCheckout",
     eventImage: '@/assets/img/hero/event-2.png',
+    selectedEvent : "/eventDetail"
   },
   {
     title: "Yacht Party",
@@ -14,6 +15,7 @@ export const eventsData  = [
     location: "Dubai, United Arab Emirates",
     link: "/ticketsCheckout",
     eventImage: '@/assets/img/hero/event-2.png',
+    selectedEvent : "/eventDetail"
   },
   {
     title: "Yacht Party",
@@ -22,6 +24,7 @@ export const eventsData  = [
     location: "Dubai, United Arab Emirates",
     link: "/ticketsCheckout",
     eventImage: '@/assets/img/hero/event-2.png',
+    selectedEvent : "/eventDetail"
   },
   {
     title: "Yacht Party",
@@ -38,6 +41,7 @@ export const eventsData  = [
     location: "Dubai, United Arab Emirates",
     link: "/ticketsCheckout",
     eventImage: '@/assets/img/hero/event-2.png',
+    selectedEvent : "/eventDetail"
   },
   {
     title: "Yacht Party",
@@ -46,29 +50,6 @@ export const eventsData  = [
     location: "Dubai, United Arab Emirates",
     link: "/ticketsCheckout",
     eventImage: '@/assets/img/hero/event-2.png',
-  },
-  {
-    title: "Yacht Party",
-    description: "Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!",
-    date: "December 14, 2024",
-    location: "Dubai, United Arab Emirates",
-    link: "/ticketsCheckout",
-    eventImage: '@/assets/img/hero/event-2.png',
-  },
-  {
-    title: "Yacht Party",
-    description: "Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!",
-    date: "December 21, 2024",
-    location: "Dubai, United Arab Emirates",
-    link: "/ticketsCheckout",
-    eventImage: '@/assets/img/hero/event-2.png',
-  },
-  {
-    title: "Yacht Party",
-    description: "Get Ready for the Ultimate Yacht Party! Join us for an unforgettable night aboard a luxurious yacht. Dance the night away with electrifying beats from our top-tier DJs, and expect an incredible vibe!",
-    date: "December 28, 2024",
-    location: "Dubai, United Arab Emirates",
-    link: "/ticketsCheckout",
-    eventImage: '@/assets/img/hero/event-2.png',
+    selectedEvent : "/eventDetail"
   }
 ];

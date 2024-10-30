@@ -134,7 +134,6 @@ const validateCVV = () => {
   cvvError.value = cvvPattern.test(paymentDetails.value.cvv) ? '' : 'Please enter a valid 3 or 4-digit CVV.'
 }
 
-// Validation methods
 const validateEmail = () => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   emailError.value = emailPattern.test(paymentDetails.value.email) ? '' : 'Please enter a valid email address.'

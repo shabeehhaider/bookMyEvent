@@ -2,17 +2,15 @@
   <section class="event-section" id="events-list">
     <div class="container">
       <div class="row">
-        <div v-for="(event, index) in events" :key="index" class="col-lg-3 col-md-4 d-flex">
-          <div class="event-card">
+        <div v-for="(event, index) in events" :key="index" class="col-lg-4 col-md-4 d-flex">
+          <nuxt-link :to="event.selectedEvent" class="event-card">
             <img src="@/assets/img/hero/event-2.png" alt="event Image" />
             <div class="card-description">
-              <!-- <p>{{ event.description }}</p> -->
               <ul class="event-info">
                 <li><strong>Date:</strong> {{ event.date }}</li>
                 <li><strong>Location:</strong> {{ event.location }}</li>
               </ul>
             </div>
-            
             <div class="counter-section d-block">
               <div class="cd-timer" :id="'countdown-' + index">
                   <div class="cd-item">
@@ -34,7 +32,7 @@
               </div>
             </div>
             <nuxt-link :to="event.link" class="btn">Get Tickets</nuxt-link> 
-          </div>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -115,6 +113,8 @@ onMounted(() => {
   flex-direction: column;
   justify-content: space-between; /* Ensures content is spread out inside the card */
   width: 100%;
+  color: inherit;
+  text-decoration: none;
 
   .card-description{
     padding: 30px 10px 0;
