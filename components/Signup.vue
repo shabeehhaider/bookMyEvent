@@ -23,6 +23,17 @@
           required
         />
       </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          v-model="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
       
       <div class="form-group">
         <label for="gender">Gender:</label>
@@ -103,6 +114,7 @@ import axios from 'axios'
 const router = useRouter()
 const name = ref('')
 const email = ref('')
+const password = ref('')
 const gender = ref('')
 const dateOfBirth = ref('')
 const phoneNumber = ref('')
@@ -114,6 +126,7 @@ const handleSignUp = async () => {
   const customerData = {
     name: name.value,
     email: email.value,
+    password: password.value,
     gender: gender.value,
     dateOfBirth: dateOfBirth.value,
     phoneNumber: phoneNumber.value,
@@ -148,12 +161,12 @@ const handleSignUp = async () => {
   margin: 100px auto;
   padding: 20px;
   border-radius: 8px;
-  background-color: #f9f9f9; /* Adjust if needed */
+  background-color: #f9f9f9; 
 }
 
 h2 {
   text-align: center;
-  color: #333; /* Adjust if needed */
+  color: #333; 
 }
 
 .form-group {
@@ -164,36 +177,39 @@ label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #333; /* Adjust if needed */
+  color: #333;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="date"],
+input[type="password"], /* Added password field styling */
 select {
   width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  box-sizing: border-box;
 }
+
 
 .signup-button {
   width: 100%;
   padding: 12px;
-  background-color: #007bff; /* Replace with your button color */
+  background-color: #007bff; 
   color: #fff;
   font-size: 18px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-family: inherit; /* Ensure font matches the theme */
+  font-family: inherit; 
 }
 
 .signup-button:hover {
-  background-color: #0056b3; /* Adjust for hover effect */
+  background-color: #0056b3;
 }
 
 .login-link {
@@ -203,7 +219,7 @@ select {
 }
 
 .login-link a {
-  color: #007bff; /* Adjust to match your theme's link color */
+  color: #007bff; 
   text-decoration: none;
   font-weight: bold;
 }
@@ -212,3 +228,4 @@ select {
   text-decoration: underline;
 }
 </style>
+
