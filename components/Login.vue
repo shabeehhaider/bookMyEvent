@@ -33,12 +33,41 @@
 
 <script setup>
 import { ref } from 'vue'
+import axios from 'axios'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const email = ref('')
 const password = ref('')
 
 const handleLogin = async () => {
-  console.log("Logging in with:", email.value, password.value)
+  console.log( "Logging in with:", email.value, password.value )
+  try {
+    const response = await axios.post('http://localhost:3002/api/auth/login/local', {
+      email: email.value,
+      password: password.value,
+    })
+    const { token, user } = response.data
+
+      localStorage.setItem('user',  JSON.stringify( user )) // Persistent storage
+      sessionStorage.setItem('accessToken', token.accessToken) // Session-only storage
+      sessionStorage.setItem('refreshToken', token.refreshToken) // Session-only storage
+
+    // Redirect to the dashboard or home page
+    router.push({ path: '/' })
+  } catch ( error ) {
+    console.log( '---error', error );
+    if (error.response && error.response.status === 401) {
+      const errorData = error.response.data
+      if (errorData.emailError) {
+        alert('Email wasn’t found')
+      } else if (errorData.passwordError) {
+        alert('Password does not match')
+      }
+    } else {
+      alert('An unexpected error occurred')
+    }
+  }
 }
 </script>
 
