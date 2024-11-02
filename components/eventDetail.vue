@@ -65,7 +65,7 @@
                   Prepare for a night full of music, drinks, and excitement under the stars! Don't miss out—this is the yacht party of the season!
                 </p>
                 <div class="text-center">
-                  <a href="#" class="btn book-btn">Book Now</a>
+                  <nuxt-link to="/login" class="btn book-btn">Book Now</nuxt-link> 
                 </div>
               </div>
             </div>
