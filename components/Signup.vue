@@ -126,14 +126,13 @@ const handleSignUp = async () => {
   const customerData = {
     name: name.value,
     email: email.value,
-    password: password.value,
+    userPassword: password.value,
     gender: gender.value,
     dateOfBirth: dateOfBirth.value,
     phoneNumber: phoneNumber.value,
     status: status.value,
     passportNumber: passportNumber.value,
-    emiratesID: emiratesID.value,
-    userPassword: 'customer123'
+    emiratesID: emiratesID.value
   }
   console.log( "Signing up with:---", customerData );
   try {
