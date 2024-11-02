@@ -97,7 +97,10 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import axios from 'axios'
 
+const router = useRouter()
 const name = ref('')
 const email = ref('')
 const gender = ref('')
@@ -108,7 +111,7 @@ const passportNumber = ref('')
 const emiratesID = ref('')
 
 const handleSignUp = async () => {
-  console.log("Signing up with:", {
+  const customerData = {
     name: name.value,
     email: email.value,
     gender: gender.value,
@@ -116,8 +119,26 @@ const handleSignUp = async () => {
     phoneNumber: phoneNumber.value,
     status: status.value,
     passportNumber: passportNumber.value,
-    emiratesID: emiratesID.value
-  })
+    emiratesID: emiratesID.value,
+    userPassword: 'customer123'
+  }
+  console.log( "Signing up with:---", customerData );
+  try {
+    const response = await axios.post('http://localhost:3002/api/customers/create', customerData)
+    console.log('Sign-up successful:', response.data)
+    alert('Customer created successfully!')
+    
+    // Redirect to login page after successful signup
+    router.push('/login')
+  } catch (error) {
+    console.error( 'Sign-up error:', error );
+    if (error.response && error.response.status === 400) {
+      const errorData = error.response.data
+      alert(errorData.message)
+    } else {
+      alert('An unexpected error occurred')
+    }
+  }
 }
 </script>
 
