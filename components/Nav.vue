@@ -16,9 +16,7 @@
                 <nav class="main-menu d-none d-lg-block">
                   <ul id="navigation">
                     <li><nuxt-link to="/">Home</nuxt-link></li>
-                    <li><nuxt-link to="/about">About</nuxt-link></li>
                     <li><nuxt-link to="/events">Events</nuxt-link></li>
-                    <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
                     <li>
                       <nuxt-link>Policy</nuxt-link>
                       <ul class="submenu">
@@ -46,9 +44,7 @@
               <div class="mobile-menu-container" v-if="isMobileMenuOpen">
                 <ul>
                   <li><nuxt-link to="/" @click="toggleMobileMenu">Home</nuxt-link></li>
-                  <li><nuxt-link to="/about" @click="toggleMobileMenu">About</nuxt-link></li>
                   <li><nuxt-link to="/events" @click="toggleMobileMenu">Events</nuxt-link></li>
-                  <li><nuxt-link to="/gallery" @click="toggleMobileMenu">Gallery</nuxt-link></li>
                   <li><nuxt-link to="/privacyPolicy" @click="toggleMobileMenu">Privacy Policy</nuxt-link></li>
                   <li><nuxt-link to="/refundPolicy" @click="toggleMobileMenu">Refund Policy</nuxt-link></li>
                   <li><nuxt-link to="/termsAndConditions" @click="toggleMobileMenu">Terms and Conditions</nuxt-link></li>

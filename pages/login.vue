@@ -2,7 +2,7 @@
   <div>
     <Nav />
     <main>
-      <AboutLowArea />
+      <!-- <AboutLowArea /> -->
     </main>
   </div>
 </template>

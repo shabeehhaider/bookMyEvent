@@ -11,7 +11,7 @@
                 <li><strong>Location:</strong> {{ event.location }}</li>
               </ul>
             </div>
-            <div class="counter-section d-block">
+            <!-- <div class="counter-section d-block">
               <div class="cd-timer" :id="'countdown-' + index">
                   <div class="cd-item">
                     <span :id="'days-' + index">96</span>
@@ -30,7 +30,7 @@
                     <p>Sec</p>
                   </div>
               </div>
-            </div>
+            </div> -->
             <nuxt-link :to="event.link" class="btn">Get Tickets</nuxt-link> 
           </nuxt-link>
         </div>
@@ -46,44 +46,44 @@ import { onMounted } from 'vue';
 
 const events = eventsData;
 
-function startCountdown(eventDate, index) {
-    const countdownElement = document.getElementById(`countdown-${index}`);
+// function startCountdown(eventDate, index) {
+//     const countdownElement = document.getElementById(`countdown-${index}`);
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
+//     const updateCountdown = () => {
+//       const now = new Date().getTime();
+//       const distance = eventDate - now;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+//       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      const formattedDays = days < 10 ? '0' + days : days;
-      const formattedHours = hours < 10 ? '0' + hours : hours;
-      const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-      const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+//       const formattedDays = days < 10 ? '0' + days : days;
+//       const formattedHours = hours < 10 ? '0' + hours : hours;
+//       const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+//       const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
 
-      document.getElementById(`days-${index}`).innerHTML = formattedDays;
-      document.getElementById(`hours-${index}`).innerHTML = formattedHours;
-      document.getElementById(`minutes-${index}`).innerHTML = formattedMinutes;
-      document.getElementById(`seconds-${index}`).innerHTML = formattedSeconds;
+//       document.getElementById(`days-${index}`).innerHTML = formattedDays;
+//       document.getElementById(`hours-${index}`).innerHTML = formattedHours;
+//       document.getElementById(`minutes-${index}`).innerHTML = formattedMinutes;
+//       document.getElementById(`seconds-${index}`).innerHTML = formattedSeconds;
 
-      if (distance < 0) {
-        clearInterval(interval);
-        countdownElement.innerHTML = "Event Started!";
-      }
-    };
+//       if (distance < 0) {
+//         clearInterval(interval);
+//         countdownElement.innerHTML = "Event Started!";
+//       }
+//     };
 
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown(); 
-}
+//     const interval = setInterval(updateCountdown, 1000);
+//     updateCountdown(); 
+// }
 
-onMounted(() => {
-  events.forEach((event, index) => {
-    const eventDate = new Date(event.date); 
-    startCountdown(eventDate.getTime(), index);
-  });
-});
+// onMounted(() => {
+//   events.forEach((event, index) => {
+//     const eventDate = new Date(event.date); 
+//     startCountdown(eventDate.getTime(), index);
+//   });
+// });
 </script>
 
 

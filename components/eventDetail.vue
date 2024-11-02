@@ -96,11 +96,15 @@ const updateCountdown = () => {
   const timeLeft = targetDate - now;
 
   if (timeLeft > 0) {
+    function formatTimeUnit(value) {
+      return value < 10 ? '0' + value : value.toString();
+    }
+
     countdown.value = {
-      days: Math.floor(timeLeft / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      minutes: Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((timeLeft % (1000 * 60)) / 1000)
+      days: formatTimeUnit(Math.floor(timeLeft / (1000 * 60 * 60 * 24))),
+      hours: formatTimeUnit(Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
+      minutes: formatTimeUnit(Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))),
+      seconds: formatTimeUnit(Math.floor((timeLeft % (1000 * 60)) / 1000))
     };
   } else {
     countdown.value = {

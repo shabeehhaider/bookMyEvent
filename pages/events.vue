@@ -2,7 +2,7 @@
   <div>
     <Nav />
     <main>
-      <!-- <EventList /> -->
+      <EventList />
     </main>
   </div>
 </template>
