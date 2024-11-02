@@ -34,8 +34,7 @@
             </div>
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div class="header-right-btn d-none d-lg-flex justify-content-end">
-                <!-- <nuxt-link to="/events" class="btn header-btn">Get Your Ticket</nuxt-link> -->
-                <nuxt-link to="#" @click.prevent="scrollToEventsList" class="btn header-btn">Get Your Ticket</nuxt-link>
+                <nuxt-link to="/login" class="btn header-btn">Login</nuxt-link>
               </div>
               <!-- Mobile menu toggle button -->
               <div class="mobile_menu_toggle d-flex d-lg-none justify-content-end" @click="toggleMobileMenu">
@@ -54,6 +53,7 @@
                   <li><nuxt-link to="/refundPolicy" @click="toggleMobileMenu">Refund Policy</nuxt-link></li>
                   <li><nuxt-link to="/termsAndConditions" @click="toggleMobileMenu">Terms and Conditions</nuxt-link></li>
                   <li><nuxt-link to="/contact" @click="toggleMobileMenu">Contact</nuxt-link></li>
+                  <li><nuxt-link to="/login" @click="toggleMobileMenu">Login</nuxt-link></li>
                 </ul>
               </div>
             </div>
@@ -122,7 +122,7 @@ onUnmounted(() => {
 
 .header-area {
   .main-header {
-    padding: 20px 10px;
+    padding: 0 10px;
     .main-menu ul {
       margin: 0;
       li {

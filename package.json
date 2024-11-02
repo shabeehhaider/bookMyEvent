@@ -13,6 +13,7 @@
     "@splidejs/splide": "4.1.4",
     "@splidejs/vue-splide": "0.6.12",
     "bootstrap": "5.3.3",
+    "moment": "^2.30.1",
     "nuxt": "3.13.0",
     "vue": "latest",
     "vue-router": "latest"

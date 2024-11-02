@@ -100,7 +100,7 @@ onMounted(() => {
 .col-lg-4,
 .col-md-6 {
   display: flex;
-  align-items: stretch; /* Makes all columns the same height */
+  align-items: stretch; 
 }
 
 .event-card {
