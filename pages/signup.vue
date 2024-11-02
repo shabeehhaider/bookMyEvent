@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Nav />
     <main>
       <Signup />
     </main>
