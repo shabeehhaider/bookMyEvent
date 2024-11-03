@@ -85,6 +85,7 @@ const isLoggedIn = computed(() => {
 
 const logout = () => {
   localStorage.removeItem('user');
+  sessionStorage.clear();
   window.location.reload();
 };
 
