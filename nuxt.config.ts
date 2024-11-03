@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   css: [
     '@splidejs/splide/dist/css/splide.min.css',
     'bootstrap/dist/css/bootstrap.css',
+    'boxicons/css/boxicons.min.css'  // Add Boxicons CSS here
+
   ],
   plugins: [
     { src: '~/plugins/splide.client.js', mode: 'client' },
