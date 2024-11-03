@@ -43,7 +43,7 @@ const password = ref('')
 const handleLogin = async () => {
   console.log( "Logging in with:", email.value, password.value )
   try {
-    const response = await axios.post('http://localhost:3002/api/auth/login/local', {
+    const response = await axios.post('https://partyyacht.ae/api/auth/login/local', {
       email: email.value,
       password: password.value,
     })
@@ -54,7 +54,7 @@ const handleLogin = async () => {
       sessionStorage.setItem('refreshToken', token.refreshToken) // Session-only storage
 
     // Redirect to the dashboard or home page
-    router.push({ path: '/' })
+    router.push({ path: '/ticketsCheckout' })
   } catch ( error ) {
     console.log( '---error', error );
     if (error.response && error.response.status === 401) {

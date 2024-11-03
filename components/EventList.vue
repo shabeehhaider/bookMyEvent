@@ -47,10 +47,10 @@ const events = eventsData;
 
 .event-card {
   background-color: #f9f9f9;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensures content is spread out inside the card */
@@ -79,7 +79,7 @@ const events = eventsData;
 .event-info {
   list-style: none;
   padding: 0;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .event-info li {

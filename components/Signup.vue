@@ -136,7 +136,7 @@ const handleSignUp = async () => {
   }
   console.log( "Signing up with:---", customerData );
   try {
-    const response = await axios.post('http://localhost:3002/api/customers/create', customerData)
+    const response = await axios.post('https://partyyacht.ae/api/customers/create', customerData)
     console.log('Sign-up successful:', response.data)
     alert('Customer created successfully!')
     

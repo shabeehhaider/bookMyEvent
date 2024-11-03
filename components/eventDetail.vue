@@ -42,13 +42,13 @@
                 </div>
                 <div class="small-images d-flex">
                   <div class="small-img">
-                    <img src="@/assets/img/gallery/about1.png" alt="Gallery Image 1"  />
+                    <img src="@/assets/img/gallery/party1.jpg" alt="Gallery Image 1"  />
                   </div>
                   <div class="small-img">
-                    <img src="@/assets/img/gallery/about1.png" alt="Gallery Image 1" />
+                    <img src="@/assets/img/gallery/party2.jpg" alt="Gallery Image 1" />
                   </div>
                   <div class="small-img">
-                    <img src="@/assets/img/gallery/about1.png" alt="Gallery Image 1" />
+                    <img src="@/assets/img/gallery/party3.jpg" alt="Gallery Image 1" />
                   </div>
                 </div>
               </div>
