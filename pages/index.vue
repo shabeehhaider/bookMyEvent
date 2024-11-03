@@ -5,6 +5,7 @@
       <SliderVideo />
       <AboutLowArea />
       <EventList />
+      <Footer />
     </main>
   </div>
 </template>
