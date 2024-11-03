@@ -54,7 +54,7 @@ const handleLogin = async () => {
       sessionStorage.setItem('refreshToken', token.refreshToken) // Session-only storage
 
     // Redirect to the dashboard or home page
-    router.push({ path: '/ticketsCheckout' })
+    router.push({ path: '/' })
   } catch ( error ) {
     console.log( '---error', error );
     if (error.response && error.response.status === 401) {

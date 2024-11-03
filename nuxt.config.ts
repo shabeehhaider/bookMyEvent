@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     'boxicons/css/boxicons.min.css'  // Add Boxicons CSS here
 
   ],
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:3000/api',
+    },
+  },
   plugins: [
     { src: '~/plugins/splide.client.js', mode: 'client' },
     { src: '~/plugins/bootstrap.ts', mode: 'client' }

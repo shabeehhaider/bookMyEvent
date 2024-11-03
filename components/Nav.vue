@@ -62,7 +62,23 @@
                   <li><nuxt-link to="/refundPolicy" @click="toggleMobileMenu">Refund Policy</nuxt-link></li>
                   <li><nuxt-link to="/termsAndConditions" @click="toggleMobileMenu">Terms and Conditions</nuxt-link></li>
                   <li><nuxt-link to="/contact" @click="toggleMobileMenu">Contact</nuxt-link></li>
-                  <li><nuxt-link to="/login" @click="toggleMobileMenu">Login</nuxt-link></li>
+                  <li>
+                    <nuxt-link
+                      v-if="!isLoggedIn"
+                      to="/login"
+                      class="btn header-btn"
+                      @click="toggleMobileMenu"
+                    >
+                      Login
+                    </nuxt-link>
+                    <button
+                      v-else
+                      @click="logout"
+                      class="btn header-btn"
+                    >
+                      Logout
+                    </button>
+                  </li>
                 </ul>
               </div>
             </div>
