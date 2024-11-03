@@ -11,7 +11,7 @@
                 <li><strong>Location:</strong> {{ event.location }}</li>
               </ul>
             </div>
-            <nuxt-link to="/login" class="btn">Get Tickets</nuxt-link> 
+            <button @click.prevent="handleGetTickets()" class="btn">Get Tickets</button> 
           </nuxt-link>
         </div>
       </div>
@@ -22,10 +22,20 @@
 
 <script setup>
 import { eventsData } from './composables/eventsData';
-import { onMounted } from 'vue';
+import { useRouter } from 'vue-router'; 
 
 const events = eventsData;
+const router = useRouter();
 
+const handleGetTickets = () => {
+  const user = localStorage.getItem('user');
+
+  if (user) {
+    router.push('/ticketsCheckout'); 
+  } else {
+    router.push('/login');
+  }
+};
 </script>
 
 

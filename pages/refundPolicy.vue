@@ -3,6 +3,8 @@
     <Nav />
     <main>
       <Refund />
+      <Footer />
+
     </main>
   </div>
 </template>

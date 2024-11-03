@@ -3,6 +3,8 @@
     <Nav />
     <main>
       <eventDetail/>
+      <Footer />
+
     </main>
   </div>
 </template>

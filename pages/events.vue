@@ -3,6 +3,8 @@
     <Nav />
     <main>
       <EventList />
+      <Footer />
+
     </main>
   </div>
 </template>

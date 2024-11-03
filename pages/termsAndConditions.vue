@@ -3,6 +3,8 @@
     <Nav />
     <main>
       <TermsAndConditions />
+      <Footer />
+
     </main>
   </div>
 </template>

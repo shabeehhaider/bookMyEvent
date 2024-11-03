@@ -65,7 +65,7 @@
                   Prepare for a night full of music, drinks, and excitement under the stars! Don't miss out—this is the yacht party of the season!
                 </p>
                 <div class="text-center">
-                  <nuxt-link to="/login" class="btn book-btn">Book Now</nuxt-link> 
+                  <button @click.prevent="handleGetTickets()" class="btn book-btn">Book Now</button> 
                 </div>
               </div>
             </div>
@@ -79,6 +79,19 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import moment from 'moment';
+import { useRouter } from 'vue-router'; 
+const router = useRouter();
+
+
+const handleGetTickets = () => {
+  const user = localStorage.getItem('user');
+
+  if (user) {
+    router.push('/ticketsCheckout'); 
+  } else {
+    router.push('/login');
+  }
+};
 
 const targetDate = new Date('2024-12-31T23:59:59');
 

@@ -3,6 +3,8 @@
     <Nav />
     <main>
       <Privacy />
+      <Footer />
+
     </main>
   </div>
 </template>

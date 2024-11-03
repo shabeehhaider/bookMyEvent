@@ -3,6 +3,8 @@
     <Nav />
     <main>
       <Signup />
+      <Footer />
+
     </main>
   </div>
 </template>
