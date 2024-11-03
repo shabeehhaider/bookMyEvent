@@ -327,6 +327,11 @@ h2 {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .pay-button {
